@@ -16,7 +16,6 @@ import com.javaweb.interfaces.DiplomadoFacadeLocal;
 import com.javaweb.interfaces.EstudianteFacadeLocal;
 import com.javaweb.interfaces.UniversidadFacadeLocal;
 import com.javaweb.interfaces.VistaFacadeLocal;
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import javax.inject.Named;
@@ -59,9 +58,16 @@ public class universidadController implements Serializable {
     
     private String direccion;
     private UploadedFile f;
+
+    /**
+     *
+     */
     public universidadController() {
     }
     
+    /**
+     *inicializamos todas los DTO objetos para conectarlos con los Entities
+     */
     @PostConstruct
     public void init(){
         diplomado = new DiplomadoDTO();
@@ -71,8 +77,12 @@ public class universidadController implements Serializable {
         
     }
     
-    
-    
+    /**
+     *metodo para crear todos los objetos en cadena
+     * @param u
+     * @param d
+     * @param e
+     */
     public void crearTodos(UniversidadDTO u, DiplomadoDTO d, EstudianteDTO e ){
         try {
             Universidad uni = new Universidad(u.getNombre(), u.getUbicacion());
@@ -110,12 +120,20 @@ public class universidadController implements Serializable {
         
     }
     
+    /**
+     *Metodo para crear unicamente una universidad
+     * @param u
+     */
     public void crearUniversidadSola(UniversidadDTO u){
         Universidad uni = new Universidad(u.getNombre(), u.getUbicacion());
         universidadEJB.create(uni);
     }
 
-    
+    /**
+     *metodo para crear diplomado con el id de la universidad
+     * @param u
+     * @param d
+     */
     public void crearDiplomadoUniversidad(UniversidadDTO u, DiplomadoDTO d){
          Universidad uni =  universidadEJB.find(u.getId());
          Diplomado dip = new Diplomado(d.getNombre(), d.getDuracion(), uni, d.getInicio(), d.getFin());
@@ -125,6 +143,11 @@ public class universidadController implements Serializable {
          diplomadoEJB.create(dip);
     }
 
+    /**
+     *metodo para asignarle el diplomado al estudiante
+     * @param d
+     * @param e
+     */
     public void crearEstudianteDiplomado(DiplomadoDTO d, EstudianteDTO e){
          Diplomado dip =  diplomadoEJB.find(d.getId());
          Estudiante est = new Estudiante(e.getNombre(), e.getCedula(), dip);
@@ -134,62 +157,122 @@ public class universidadController implements Serializable {
          estudianteEJB.create(est);
     }
     
+    /**
+     *metodo que me va a retornar la vista
+     * @return
+     */
     public List<Vista> ob(){
         return this.vistaEJB.obtenerRegistro();
     }
     
+    /**
+     *
+     * @return
+     */
     public DiplomadoDTO getDiplomado() {
         return diplomado;
     }
 
+    /**
+     *
+     * @param diplomado
+     */
     public void setDiplomado(DiplomadoDTO diplomado) {
         this.diplomado = diplomado;
     }
 
+    /**
+     *
+     * @return
+     */
     public UniversidadDTO getUniversidad() {
         return universidad;
     }
 
+    /**
+     *
+     * @param universidad
+     */
     public void setUniversidad(UniversidadDTO universidad) {
         this.universidad = universidad;
     }
 
+    /**
+     *
+     * @return
+     */
     public EstudianteDTO getEstudiante() {
         return estudiante;
     }
 
+    /**
+     *
+     * @param estudiante
+     */
     public void setEstudiante(EstudianteDTO estudiante) {
         this.estudiante = estudiante;
     }
 
+    /**
+     *
+     * @return
+     */
     public UploadedFile getF() {
         return f;
     }
 
+    /**
+     *
+     * @param f
+     */
     public void setF(UploadedFile f) {
         this.f = f;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDireccion() {
         return direccion;
     }
 
+    /**
+     *
+     * @param direccion
+     */
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getD() {
         return d;
     }
 
+    /**
+     *
+     * @param d
+     */
     public void setD(int d) {
         this.d = d;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Vista> getListarDatos() {
         return listarDatos;
     }
 
+    /**
+     *
+     * @param listarDatos
+     */
     public void setListarDatos(List<Vista> listarDatos) {
         this.listarDatos = listarDatos;
     }
