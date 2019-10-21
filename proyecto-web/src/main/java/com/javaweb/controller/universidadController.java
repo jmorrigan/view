@@ -142,7 +142,7 @@ public class universidadController implements Serializable {
          dip.setUniversity(uni);
          diplomadoEJB.create(dip);
     }
-
+    
     /**
      *metodo para asignarle el diplomado al estudiante
      * @param d
@@ -163,6 +163,22 @@ public class universidadController implements Serializable {
      */
     public List<Vista> ob(){
         return this.vistaEJB.obtenerRegistro();
+    }
+    
+     /**
+     *metodo que me va a retornar la universidad
+     * @return
+     */
+    public List<Universidad>uni(){
+        return this.universidadEJB.findAll();
+    }
+    
+     /**
+     *metodo que me va a retornar el diplomado
+     * @return
+     */
+    public List<Diplomado>dip(){
+        return this.diplomadoEJB.findAll();
     }
     
     /**

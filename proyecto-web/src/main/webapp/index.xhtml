@@ -8,9 +8,9 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <h:form id="este" enctype="multipart/form-data">
+        <h:form id="este" enctype="multipart/form-data" style="background: burlywood; text-align: center">
             <p:growl showDetail="true"></p:growl>
-            <p:panelGrid columns="9">
+            <p:panelGrid columns="9" style="margin: 0 auto" >
                
                 <p:row>
                     <h2>UNIVERSIDAD</h2>
@@ -45,9 +45,9 @@
             
             <p:commandButton value="CREAR TODO" actionListener="#{universidadController.crearTodos(universidadController.universidad, universidadController.diplomado, universidadController.estudiante)}" update="lista" ajax="false"></p:commandButton>
             
-            <p:commandButton value="CREAR UNIVERSIDAD SOLA" action="#{universidadController.crearUniversidadSola(universidadController.universidad)}" update="lista" ajax="false"></p:commandButton>
+            <p:commandButton value="CREAR UNIVERSIDAD SOLA" action="#{universidadController.crearUniversidadSola(universidadController.universidad)}" update="uni" ajax="false"></p:commandButton>
             
-            <p:commandButton value="CREAR DIPLOMADO UNIVERSIDAD" action="#{universidadController.crearDiplomadoUniversidad(universidadController.universidad,universidadController.diplomado )}" update="lista" ajax="false"></p:commandButton>
+            <p:commandButton value="CREAR DIPLOMADO UNIVERSIDAD" action="#{universidadController.crearDiplomadoUniversidad(universidadController.universidad,universidadController.diplomado )}" update="dip" ajax="false"></p:commandButton>
          
             <p:commandButton value="CREAR ESTUDIANTE DIPLOMADO" action="#{universidadController.crearEstudianteDiplomado(universidadController.diplomado, universidadController.estudiante)}" update="lista" ajax="false"></p:commandButton>
         
@@ -55,7 +55,40 @@
                     <p:ajax update=":este" resetValues="true" />
             </p:commandButton>
             
-            <p:dataTable id="lista" var="l" value="#{universidadController.ob()}">
+            <br></br>
+            <br></br>
+            <p:separator>UNIVERSIDADES</p:separator>
+            <p:dataTable id="uni" value="#{universidadController.uni()}" var="u" paginator="true" rows="6">
+                <p:column headerText="id_universidad">
+                    <p:outputLabel value="#{u.id}"></p:outputLabel>
+                </p:column>
+                <p:column headerText="universidad">
+                    <p:outputLabel value="#{u.nombre}"></p:outputLabel>
+                </p:column>
+                <p:column headerText="sede">
+                    <p:outputLabel value="#{u.ubicacion}"></p:outputLabel>
+                </p:column>
+            </p:dataTable>
+            <p:separator>DIPLOMADOS</p:separator>
+            <p:dataTable id="dip" value="#{universidadController.dip()}" var="d" paginator="true" rows="6">
+                <p:column headerText="id_diplomado">
+                    <p:outputLabel value="#{d.id}"></p:outputLabel>
+                </p:column>
+                <p:column headerText="diplomado">
+                    <p:outputLabel value="#{d.nombre}"></p:outputLabel>
+                </p:column>
+                <p:column headerText="inicio">
+                    <p:outputLabel value="#{d.fecha_inicio}"> <f:convertDateTime pattern="MM/dd/yyyy" /></p:outputLabel>
+                </p:column>
+                <p:column headerText="fin">
+                    <p:outputLabel value="#{d.fecha_fin}"> <f:convertDateTime pattern="MM/dd/yyyy" /></p:outputLabel>
+                </p:column>
+                <p:column headerText="universidad">
+                    <p:outputLabel value="#{d.university.nombre}"></p:outputLabel>
+                </p:column>
+            </p:dataTable>
+            <p:separator>VISTA</p:separator>
+            <p:dataTable id="lista" var="l" value="#{universidadController.ob()}" paginator="true" rows="6" >
                 <p:column headerText="id_universidad">
                     <p:outputLabel value="#{l.ide}"></p:outputLabel>
                 </p:column>
