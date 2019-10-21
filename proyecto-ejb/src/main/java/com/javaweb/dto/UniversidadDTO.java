@@ -17,29 +17,56 @@ public class UniversidadDTO {
     
     private String ubicacion;
 
+    /**
+     *
+     */
     public UniversidadDTO() {
     }
 
+    /**
+     *
+     * @return
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     *
+     * @param id
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     *
+     * @param nombre
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getUbicacion() {
         return ubicacion;
     }
 
+    /**
+     *
+     * @param ubicacion
+     */
     public void setUbicacion(String ubicacion) {
         this.ubicacion = ubicacion;
     }

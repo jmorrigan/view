@@ -23,45 +23,88 @@ public class DiplomadoDTO {
     
     private Date fin;
 
+    /**
+     *
+     */
     public DiplomadoDTO() {
     }
 
+    /**
+     *
+     * @return
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     *
+     * @param id
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     *
+     * @param nombre
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDuracion() {
         return duracion;
     }
 
+    /**
+     *
+     * @param duracion
+     */
     public void setDuracion(String duracion) {
         this.duracion = duracion;
     }
 
+    /**
+     *
+     * @return
+     */
     public Date getInicio() {
         return inicio;
     }
 
+    /**
+     *
+     * @param inicio
+     */
     public void setInicio(Date inicio) {
         this.inicio = inicio;
     }
 
+    /**
+     *
+     * @return
+     */
     public Date getFin() {
         return fin;
     }
 
+    /**
+     *
+     * @param fin
+     */
     public void setFin(Date fin) {
         this.fin = fin;
     }

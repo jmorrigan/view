@@ -40,48 +40,84 @@ public class Universidad implements Serializable{
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "university")
     private List<Diplomado> listaDiplomados;
 
+    /**
+     *
+     */
     public Universidad() {
     }
 
+    /**
+     *
+     * @param nombre
+     * @param ubicacion
+     */
     public Universidad(String nombre, String ubicacion) {
         this.nombre = nombre;
         this.ubicacion = ubicacion;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     *
+     * @param id
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     *
+     * @param nombre
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getUbicacion() {
         return ubicacion;
     }
 
+    /**
+     *
+     * @param ubicacion
+     */
     public void setUbicacion(String ubicacion) {
         this.ubicacion = ubicacion;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Diplomado> getListaDiplomados() {
         return listaDiplomados;
     }
 
+    /**
+     *
+     * @param listaDiplomados
+     */
     public void setListaDiplomados(List<Diplomado> listaDiplomados) {
         this.listaDiplomados = listaDiplomados;
     }
-    
-    
-    
-    
     
 }

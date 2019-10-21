@@ -28,11 +28,18 @@ public class UniversidadFacade extends AbstractFacade<Universidad> implements Un
     @PersistenceContext(unitName = "universidadPU")
     private EntityManager em;
 
+    /**
+     *
+     * @return
+     */
     @Override
     protected EntityManager getEntityManager() {
         return em;
     }
 
+    /**
+     *
+     */
     public UniversidadFacade() {
         super(Universidad.class);
     }

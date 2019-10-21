@@ -54,9 +54,20 @@ public class Diplomado implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date fecha_fin;
 
+    /**
+     *
+     */
     public Diplomado() {
     }
 
+    /**
+     *
+     * @param nombred
+     * @param duracion
+     * @param university
+     * @param fecha_inicio
+     * @param fecha_fin
+     */
     public Diplomado(String nombred, String duracion, Universidad university, Date fecha_inicio, Date fecha_fin) {
         this.nombred = nombred;
         this.duracion = duracion;
@@ -65,66 +76,124 @@ public class Diplomado implements Serializable {
         this.fecha_fin = fecha_fin;
     }
 
-    
-
+    /**
+     *
+     * @param nombred
+     * @param duracion
+     */
     public Diplomado(String nombred, String duracion) {
         this.nombred = nombred;
         this.duracion = duracion;
     }
 
-    
+    /**
+     *
+     * @return
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     *
+     * @param id
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNombre() {
         return nombred;
     }
 
+    /**
+     *
+     * @param nombred
+     */
     public void setNombre(String nombred) {
         this.nombred = nombred;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDuracion() {
         return duracion;
     }
 
+    /**
+     *
+     * @param duracion
+     */
     public void setDuracion(String duracion) {
         this.duracion = duracion;
     }
 
+    /**
+     *
+     * @return
+     */
     public Universidad getUniversity() {
         return university;
     }
 
+    /**
+     *
+     * @param university
+     */
     public void setUniversity(Universidad university) {
         this.university = university;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Estudiante> getListaEstudiantes() {
         return listaEstudiantes;
     }
 
+    /**
+     *
+     * @param listaEstudiantes
+     */
     public void setListaEstudiantes(List<Estudiante> listaEstudiantes) {
         this.listaEstudiantes = listaEstudiantes;
     }
 
+    /**
+     *
+     * @return
+     */
     public Date getFecha_inicio() {
         return fecha_inicio;
     }
 
+    /**
+     *
+     * @param fecha_inicio
+     */
     public void setFecha_inicio(Date fecha_inicio) {
         this.fecha_inicio = fecha_inicio;
     }
 
+    /**
+     *
+     * @return
+     */
     public Date getFecha_fin() {
         return fecha_fin;
     }
 
+    /**
+     *
+     * @param fecha_fin
+     */
     public void setFecha_fin(Date fecha_fin) {
         this.fecha_fin = fecha_fin;
     }

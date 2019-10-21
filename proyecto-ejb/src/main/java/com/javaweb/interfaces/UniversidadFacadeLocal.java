@@ -17,18 +17,48 @@ import javax.ejb.Local;
 @Local
 public interface UniversidadFacadeLocal {
 
+    /**
+     *
+     * @param universidad
+     */
     void create(Universidad universidad);
 
+    /**
+     *
+     * @param universidad
+     */
     void edit(Universidad universidad);
 
+    /**
+     *
+     * @param universidad
+     */
     void remove(Universidad universidad);
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     Universidad find(Object id);
 
+    /**
+     *
+     * @return
+     */
     List<Universidad> findAll();
 
+    /**
+     *
+     * @param range
+     * @return
+     */
     List<Universidad> findRange(int[] range);
 
+    /**
+     *
+     * @return
+     */
     int count();
     
 }

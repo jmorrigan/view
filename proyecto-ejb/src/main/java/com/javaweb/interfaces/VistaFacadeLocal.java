@@ -16,20 +16,54 @@ import javax.ejb.Local;
 @Local
 public interface VistaFacadeLocal {
 
+    /**
+     *
+     * @param vista
+     */
     void create(Vista vista);
 
+    /**
+     *
+     * @param vista
+     */
     void edit(Vista vista);
 
+    /**
+     *
+     * @param vista
+     */
     void remove(Vista vista);
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     Vista find(Object id);
 
+    /**
+     *
+     * @return
+     */
     List<Vista> findAll();
 
+    /**
+     *
+     * @param range
+     * @return
+     */
     List<Vista> findRange(int[] range);
 
+    /**
+     *
+     * @return
+     */
     List<Vista> obtenerRegistro();
     
+    /**
+     *
+     * @return
+     */
     int count();
     
 }

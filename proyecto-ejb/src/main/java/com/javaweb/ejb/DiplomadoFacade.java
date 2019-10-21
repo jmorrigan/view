@@ -21,11 +21,18 @@ public class DiplomadoFacade extends AbstractFacade<Diplomado> implements Diplom
     @PersistenceContext(unitName = "universidadPU")
     private EntityManager em;
 
+    /**
+     *
+     * @return
+     */
     @Override
     protected EntityManager getEntityManager() {
         return em;
     }
 
+    /**
+     *
+     */
     public DiplomadoFacade() {
         super(Diplomado.class);
     }

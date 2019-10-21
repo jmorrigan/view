@@ -27,15 +27,26 @@ public class VistaFacade extends AbstractFacade<Vista> implements VistaFacadeLoc
     @PersistenceContext(unitName = "universidadPU")
     private EntityManager em;
 
+    /**
+     *
+     * @return
+     */
     @Override
     protected EntityManager getEntityManager() {
         return em;
     }
 
+    /**
+     *
+     */
     public VistaFacade() {
         super(Vista.class);
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public List<Vista> obtenerRegistro() {
         TypedQuery<Vista> consulta = em.createNamedQuery("filtro", Vista.class);

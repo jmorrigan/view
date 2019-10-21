@@ -16,18 +16,48 @@ import javax.ejb.Local;
 @Local
 public interface EstudianteFacadeLocal {
 
+    /**
+     *
+     * @param estudiante
+     */
     void create(Estudiante estudiante);
 
+    /**
+     *
+     * @param estudiante
+     */
     void edit(Estudiante estudiante);
 
+    /**
+     *
+     * @param estudiante
+     */
     void remove(Estudiante estudiante);
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     Estudiante find(Object id);
 
+    /**
+     *
+     * @return
+     */
     List<Estudiante> findAll();
 
+    /**
+     *
+     * @param range
+     * @return
+     */
     List<Estudiante> findRange(int[] range);
 
+    /**
+     *
+     * @return
+     */
     int count();
     
 }

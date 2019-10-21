@@ -16,18 +16,48 @@ import javax.ejb.Local;
 @Local
 public interface DiplomadoFacadeLocal {
 
+    /**
+     *
+     * @param diplomado
+     */
     void create(Diplomado diplomado);
 
+    /**
+     *
+     * @param diplomado
+     */
     void edit(Diplomado diplomado);
 
+    /**
+     *
+     * @param diplomado
+     */
     void remove(Diplomado diplomado);
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     Diplomado find(Object id);
 
+    /**
+     *
+     * @return
+     */
     List<Diplomado> findAll();
 
+    /**
+     *
+     * @param range
+     * @return
+     */
     List<Diplomado> findRange(int[] range);
 
+    /**
+     *
+     * @return
+     */
     int count();
     
 }
